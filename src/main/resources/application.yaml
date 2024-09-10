@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Movie Journal
+
+tmdb:
+  apiKey: API_KEY
