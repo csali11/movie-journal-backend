@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15
+    hostname: postgresql
+    environment:
+      POSTGRES_USER: moviedb
+      POSTGRES_PASSWORD: moviedb
+      POSTGRES_DB: movie-journal
+    volumes:
+      - postgres-data:/var/lib/postgresql2/data
+    ports:
+      - 15433:5432
+
+volumes:
+  postgres-data:
