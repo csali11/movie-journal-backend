@@ -2,5 +2,17 @@ spring:
   application:
     name: Movie Journal
 
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:15433/movie-journal
+    username: moviedb
+    password: moviedb
+    hikari:
+      data-source-properties:
+        use-unicode: true
+        character-encoding: utf-8
+  jpa:
+    show-sql: true
+
 tmdb:
   apiKey: API_KEY
