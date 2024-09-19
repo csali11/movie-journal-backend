@@ -1,6 +1,7 @@
 package hu.practice.moviejournal.controller;
 
 import hu.practice.moviejournal.service.TMDBService;
+import info.movito.themoviedbapi.model.core.MovieResultsPage;
 import info.movito.themoviedbapi.model.movies.MovieDb;
 import info.movito.themoviedbapi.tools.TmdbException;
 import org.springframework.http.ResponseEntity;
@@ -21,5 +22,10 @@ public class TMDBController {
     @GetMapping("/movie/{id}")
     public ResponseEntity<MovieDb> getGenres(@PathVariable int id) throws TmdbException {
         return ResponseEntity.ok(tmdbService.getMovie(id));
+    }
+
+    @GetMapping("/movie/discover")
+    public ResponseEntity<MovieResultsPage> getDiscover() throws TmdbException {
+        return ResponseEntity.ok(tmdbService.getDiscover());
     }
 }
